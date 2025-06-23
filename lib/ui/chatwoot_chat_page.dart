@@ -43,16 +43,13 @@ class ChatwootChat extends StatefulWidget {
   final double? onEndReachedThreshold;
 
   /// See [Message.onMessageLongPress]
-  final void Function(types.Message)? onMessageLongPress;
+  final void Function(BuildContext, types.Message)? onMessageLongPress;
 
   /// See [Message.onMessageTap]
   final void Function(types.Message)? onMessageTap;
 
   /// See [Input.onSendPressed]
   final void Function(types.PartialText)? onSendPressed;
-
-  /// See [Input.onTextChanged]
-  final void Function(String)? onTextChanged;
 
   /// Show avatars for received messages.
   final bool showUserAvatars;
@@ -128,7 +125,6 @@ class ChatwootChat extends StatefulWidget {
       this.onMessageLongPress,
       this.onMessageTap,
       this.onSendPressed,
-      this.onTextChanged,
       this.showUserAvatars = true,
       this.showUserNames = true,
       this.theme = const ChatwootChatTheme(),
@@ -418,8 +414,8 @@ class _ChatwootChatState extends State<ChatwootChat> {
                 user: _user,
                 onEndReached: widget.onEndReached,
                 onEndReachedThreshold: widget.onEndReachedThreshold,
-                onMessageLongPress: widget.onMessageLongPress,
-                onTextChanged: widget.onTextChanged,
+                onMessageLongPress: (context, message) =>
+                    widget.onMessageLongPress?.call(context, message),
                 showUserAvatars: widget.showUserAvatars,
                 showUserNames: widget.showUserNames,
                 timeFormat: widget.timeFormat ?? DateFormat.Hm(),
