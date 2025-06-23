@@ -333,7 +333,7 @@ class _ChatwootChatState extends State<ChatwootChat> {
     });
   }
 
-  void _handleMessageTap(types.Message message) async {
+  void _handleMessageTap(BuildContext context, types.Message message) async {
     if (message.status == types.Status.error && message is types.TextMessage) {
       _handleResendMessage(message);
     }
