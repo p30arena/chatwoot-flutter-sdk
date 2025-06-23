@@ -345,7 +345,8 @@ class _ChatwootChatState extends State<ChatwootChat> {
     types.PreviewData previewData,
   ) {
     final index = _messages.indexWhere((element) => element.id == message.id);
-    final updatedMessage = _messages[index].copyWith(previewData: previewData);
+    final textMessage = _messages[index] as types.TextMessage;
+    final updatedMessage = textMessage.copyWith(previewData: previewData);
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
