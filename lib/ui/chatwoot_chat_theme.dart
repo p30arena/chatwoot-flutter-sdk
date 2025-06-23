@@ -5,6 +5,33 @@ const CHATWOOT_COLOR_PRIMARY = Color(0xff1f93ff);
 const CHATWOOT_BG_COLOR = Color(0xfff4f6fb);
 const CHATWOOT_AVATAR_COLORS = [CHATWOOT_COLOR_PRIMARY];
 
+/// Dark
+const DARK = Color(0xff1f1c38);
+
+/// Error
+const ERROR = Color(0xffff6767);
+
+/// N0
+const NEUTRAL_0 = Color(0xff1d1c21);
+
+/// N2
+const NEUTRAL_2 = Color(0xff9e9cab);
+
+/// N7
+const NEUTRAL_7 = Color(0xffffffff);
+
+/// N7 with opacity
+const NEUTRAL_7_WITH_OPACITY = Color(0x80ffffff);
+
+/// Primary
+const PRIMARY = Color(0xff6f61e8);
+
+/// Secondary
+const SECONDARY = Color(0xfff5f5f7);
+
+/// Secondary dark
+const SECONDARY_DARK = Color(0xff2b2250);
+
 /// Default chatwoot chat theme which extends [ChatTheme]
 @immutable
 class ChatwootChatTheme extends ChatTheme {
